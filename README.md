@@ -7,7 +7,7 @@ AK2 Store is a Laravel storefront for browsing products and categories, managing
 - PHP 8.4 or newer (below PHP 9)
 - Laravel 13, Livewire 4, Filament 5, and Filament Shield
 - MariaDB or MySQL for a hosted demo
-- Vite Plus, Tailwind CSS 4, Node.js 22, and npm
+- Vite Plus, Tailwind CSS 4, Node.js 26, and npm
 
 For MariaDB/MySQL, PHP must have PDO and `pdo_mysql` enabled. Install the PHP extensions required by Composer, including `ctype`, `dom`, `fileinfo`, `filter`, `hash`, `iconv`, `intl`, `json`, `libxml`, `mbstring`, `openssl`, `session`, `tokenizer`, `xmlreader`, and `zip`.
 
@@ -95,6 +95,20 @@ The web server's document root must be the project's `public` directory. Do not 
 Product and storefront uploads use Laravel's public storage disk. Keep `storage/app/public` on persistent storage and ensure `public/storage` is linked after deployment. Files uploaded on the current workstation are not part of the repository; upload only approved demo images to the demo environment. Free hosting plans may use ephemeral storage or sleep when idle, so confirm their persistence, symlink, PHP CLI, and database-networking support.
 
 Generated Vite assets in `public/build` and published Filament assets are build/deployment outputs and are intentionally excluded from Git. Build/publish them during deployment. Set `APP_DEBUG=false`, use a unique `APP_KEY`, and configure HTTPS and the correct `APP_URL` on the host. The example mailer writes to the log; configure a mail provider through environment settings if password reset or email-verification messages must be delivered.
+
+## Docker and Render
+
+The Dockerfile uses PHP 8.4 with Apache for the runtime and a separate Node.js 26 stage to build the Vite CSS and font assets. Build locally with:
+
+```sh
+docker build -t ak2-store .
+```
+
+In Render, select the Docker runtime and configure `APP_ENV=production`, `APP_DEBUG=false`, `APP_KEY`, `APP_URL`, and `DB_CONNECTION=mariadb` with `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD` for a new hosted database. Keep credentials in Render's environment settings, not in this repository. Set `LOG_CHANNEL=stderr` so application logs reach Render's log stream, and set `SESSION_SECURE_COOKIE=true` for the HTTPS service.
+
+The example defaults use database-backed sessions, cache, and queue. Their tables are included in the migrations, but the image build does not run migrations; migrate only after verifying that the configured database is the new, empty demo database. The web container runs Apache only, not a queue worker. If queued jobs are introduced, add a separate Render worker; do not assume jobs will be processed by the web service. The container listens on Render's `PORT` and creates the public storage link at image build time.
+
+Render's local filesystem may be ephemeral. Use a persistent disk mounted for `storage/app/public` or external object storage if uploaded product images must survive restarts or redeployments.
 
 ## Deployment safety notes
 
