@@ -1,0 +1,859 @@
+
+/* ========================================
+   AK2 HOME - HERO SECTION
+======================================== */
+
+.hero-section {
+    position: relative;
+    min-height: 650px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(212, 175, 55, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(115deg, #080D18, #101827);
+}
+
+.hero-container {
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 0;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    color: #D4AF37;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+}
+
+.hero-content h1 {
+    max-width: 650px;
+    color: #F5F5F5;
+    font-size: clamp(42px, 5.5vw, 76px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -3px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #D4AF37;
+}
+
+.hero-content > p {
+    max-width: 440px;
+    margin-top: 25px;
+    color: #B4BBC7;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.hero-button {
+    width: fit-content;
+    min-height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 35px;
+    padding: 0 28px;
+    background: #D4AF37;
+    color: #080D18;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background: #F0D477;
+    transform: translateY(-3px);
+}
+
+.hero-button span {
+    font-size: 22px;
+}
+
+.hero-indicators {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 75px;
+}
+
+.hero-indicators span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #424B59;
+}
+
+.hero-indicators span.active {
+    background: #D4AF37;
+}
+
+/* Hero Visual */
+
+.hero-visual {
+    position: relative;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.15),
+            transparent 50%
+        ),
+        linear-gradient(145deg, #182437, #080D18);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.hero-image-placeholder span {
+    color: rgba(212, 175, 55, 0.35);
+    font-size: clamp(90px, 12vw, 180px);
+    font-weight: 800;
+    letter-spacing: -10px;
+}
+
+.hero-image-placeholder p {
+    color: #D4AF37;
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .hero-content {
+        padding: 30px 0;
+    }
+
+    .hero-visual {
+        height: 350px;
+    }
+
+    .hero-indicators {
+        margin-top: 45px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-section {
+        min-height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 10vw, 55px);
+        letter-spacing: -2px;
+    }
+
+    .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+
+    .hero-content > p {
+        font-size: 14px;
+    }
+
+    .hero-button {
+        min-height: 50px;
+        font-size: 11px;
+    }
+
+    .hero-visual {
+        height: 280px;
+    }
+}
+
+/* ========================================
+   AK2 SHOP BY CATEGORY
+======================================== */
+
+.categories-section {
+    padding: 100px 0;
+    background: #0B1220;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-eyebrow {
+    display: block;
+    color: #D4AF37;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    color: #F5F5F5;
+    font-size: clamp(30px, 4vw, 45px);
+    font-weight: 800;
+}
+
+.section-heading h2 span {
+    color: #D4AF37;
+}
+
+.section-heading p {
+    color: #A5ADBA;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    position: relative;
+    min-height: 390px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: #172235;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.category-men {
+    background: linear-gradient(145deg, #27384A, #101827 75%);
+}
+
+.category-women {
+    background: linear-gradient(145deg, #493D42, #17151D 75%);
+}
+
+.category-kids {
+    background: linear-gradient(145deg, #35464B, #111B26 75%);
+}
+
+.category-shoes {
+    background: linear-gradient(145deg, #51452F, #171C25 75%);
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+    border-color: #D4AF37;
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(4, 8, 16, 0.98),
+        rgba(4, 8, 16, 0.1) 85%
+    );
+}
+
+.category-content {
+    position: relative;
+    z-index: 1;
+    padding: 25px;
+    width: 100%;
+}
+
+.category-content > span {
+    color: #D4AF37;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.category-content h3 {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 800;
+    margin: 12px 0 5px;
+}
+
+.category-content p {
+    color: #C1C7D0;
+    font-size: 12px;
+    margin-bottom: 22px;
+}
+
+.category-content strong {
+    color: #D4AF37;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+/* Category Responsive */
+
+@media (max-width: 900px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-card {
+        min-height: 340px;
+    }
+}
+
+@media (max-width: 550px) {
+    .categories-section {
+        padding: 65px 0;
+    }
+
+    .categories-grid {
+        gap: 12px;
+    }
+
+    .category-card {
+        min-height: 260px;
+    }
+
+    .category-content {
+        padding: 15px;
+    }
+
+    .category-content h3 {
+        font-size: 23px;
+    }
+
+    .category-content p {
+        font-size: 10px;
+    }
+}
+
+/* ========================================
+   AK2 FEATURED PRODUCTS
+======================================== */
+
+.featured-section {
+    padding: 100px 0;
+    background: #080D18;
+}
+
+.featured-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.featured-title {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.view-all-link {
+    color: #D4AF37;
+    font-size: 11px;
+    font-weight: 800;
+    text-decoration: none;
+    padding-bottom: 12px;
+}
+
+.view-all-link:hover {
+    color: #F0D477;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.product-card {
+    min-width: 0;
+    background: #101827;
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212, 175, 55, 0.6);
+}
+
+.product-image {
+    position: relative;
+    height: 310px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #26354A, #111827);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-placeholder {
+    color: rgba(212, 175, 55, 0.35);
+    font-size: 65px;
+    font-weight: 800;
+    letter-spacing: -5px;
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    padding: 7px 10px;
+    background: #D4AF37;
+    color: #080D18;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.quick-view {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+    background: #D4AF37;
+    color: #080D18;
+    font-size: 10px;
+    font-weight: 800;
+    text-decoration: none;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .quick-view {
+    transform: translateY(0);
+}
+
+.product-info {
+    padding: 20px 16px;
+}
+
+.product-category {
+    color: #D4AF37;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.product-info h3 {
+    color: #F5F5F5;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.product-price {
+    color: #D4AF37;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.product-action {
+    display: block;
+    margin-top: 17px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #F5F5F5;
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.product-action:hover {
+    background: #D4AF37;
+    color: #080D18;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .featured-section {
+        padding: 65px 0;
+    }
+
+    .featured-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .products-grid {
+        gap: 12px;
+    }
+
+    .product-image {
+        height: 230px;
+    }
+
+    .product-info {
+        padding: 15px 10px;
+    }
+}
+
+/* ========================================
+   AK2 NEW ARRIVALS
+======================================== */
+
+.new-arrivals-section {
+    padding: 100px 0;
+    background: #0B1220;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.new-arrivals-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.new-badge {
+    background: #F5F5F5;
+    color: #080D18;
+}
+
+/* New Product Hover */
+
+.new-product-card .product-image-placeholder {
+    transition: transform 0.5s ease;
+}
+
+.new-product-card:hover .product-image-placeholder {
+    transform: scale(1.12);
+}
+
+/* Responsive */
+
+@media (max-width: 550px) {
+    .new-arrivals-section {
+        padding: 65px 0;
+    }
+
+    .new-arrivals-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* ========================================
+   AK2 PROMOTIONAL BANNER
+======================================== */
+
+.promotion-section {
+    padding: 90px 0;
+    background: #080D18;
+}
+
+.promotion-banner {
+    position: relative;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 65px;
+    background:
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(212, 175, 55, 0.22),
+            transparent 35%
+        ),
+        linear-gradient(115deg, #172337, #080D18);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.promotion-banner.has-background-image::before {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: rgba(8, 13, 24, 0.62);
+    content: "";
+    pointer-events: none;
+}
+
+.promotion-background-image {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promotion-content {
+    position: relative;
+    z-index: 2;
+    max-width: 580px;
+}
+
+.promotion-eyebrow {
+    color: #D4AF37;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.promotion-content h2 {
+    color: #F5F5F5;
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 20px;
+}
+
+.promotion-content h2 span {
+    display: block;
+    color: #D4AF37;
+}
+
+.promotion-content p {
+    max-width: 430px;
+    color: #A5ADBA;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-top: 20px;
+}
+
+.promotion-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 28px;
+    padding: 16px 25px;
+    background: #D4AF37;
+    color: #080D18;
+    font-size: 11px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.promotion-button:hover {
+    background: #F0D477;
+    transform: translateY(-3px);
+}
+
+.promotion-button span {
+    font-size: 20px;
+}
+
+.promotion-decoration {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(212, 175, 55, 0.13);
+    font-size: clamp(45px, 8vw, 100px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -5px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.promotion-number {
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    color: rgba(212, 175, 55, 0.6);
+    font-size: 13px;
+    letter-spacing: 3px;
+    z-index: 2;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+    .promotion-section {
+        padding: 60px 0;
+    }
+
+    .promotion-banner {
+        min-height: 400px;
+        padding: 35px 25px;
+    }
+
+    .promotion-content h2 {
+        font-size: 38px;
+    }
+
+    .promotion-content p {
+        font-size: 12px;
+    }
+
+    .promotion-decoration {
+        right: 10px;
+        font-size: 55px;
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 380px) {
+    .promotion-banner {
+        padding: 30px 18px;
+    }
+
+    .promotion-content h2 {
+        font-size: 32px;
+    }
+}
+
+/* ========================================
+   AK2 NEWSLETTER
+======================================== */
+
+.newsletter-section {
+    padding: 100px 0;
+    background: #101827;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.newsletter-content {
+    max-width: 720px;
+    margin: auto;
+    text-align: center;
+}
+
+.newsletter-content h2 {
+    color: #F5F5F5;
+    font-size: clamp(35px, 5vw, 55px);
+    font-weight: 800;
+    margin-top: 18px;
+    line-height: 1.2;
+}
+
+.newsletter-content h2 span {
+    color: #D4AF37;
+}
+
+.newsletter-content > p {
+    max-width: 540px;
+    margin: 18px auto 30px;
+    color: #A5ADBA;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 580px;
+    margin: auto;
+    padding: 5px;
+    background: #080D18;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 16px;
+    color: #F5F5F5;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.newsletter-form input::placeholder {
+    color: #7F8998;
+}
+
+.newsletter-form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 22px;
+    color: #080D18;
+    background: #D4AF37;
+    border: none;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #F0D477;
+}
+
+.newsletter-form button span {
+    font-size: 18px;
+}
+
+.newsletter-content small {
+    display: block;
+    margin-top: 18px;
+    color: #7F8998;
+    font-size: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 550px) {
+    .newsletter-section {
+        padding: 70px 0;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 8px;
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    .newsletter-form input {
+        min-height: 52px;
+        background: #080D18;
+        border: 1px solid rgba(212, 175, 55, 0.35);
+    }
+
+    .newsletter-form button {
+        min-height: 50px;
+    }
+}

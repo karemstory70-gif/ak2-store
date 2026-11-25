@@ -1,0 +1,82 @@
+:root {
+    color-scheme: light;
+
+    --color-gray-50: #f7f9fd;
+    --color-gray-100: #eff3f9;
+    --color-gray-200: #dfe7f1;
+    --color-gray-300: #c7d3e2;
+    --color-gray-400: #91a4bd;
+    --color-gray-500: #657c99;
+    --color-gray-600: #4a6381;
+    --color-gray-700: #354c69;
+    --color-gray-800: #243752;
+    --color-gray-900: #172941;
+    --color-gray-950: #101e34;
+}
+
+html.dark {
+    color-scheme: dark;
+
+    --color-gray-50: #f4f7fc;
+    --color-gray-100: #e6edf7;
+    --color-gray-200: #cbd7e8;
+    --color-gray-300: #a9bbd3;
+    --color-gray-400: #849bb9;
+    --color-gray-500: #627b9e;
+    --color-gray-600: #455f83;
+    --color-gray-700: #30496b;
+    --color-gray-800: #1e3657;
+    --color-gray-900: #142844;
+    --color-gray-950: #0a1426;
+}
+
+.fi-body {
+    background-color: #f7f9fd;
+    background-image: radial-gradient(ellipse at top right, rgb(8 125 242 / 8%), transparent 36rem);
+}
+
+html.dark .fi-body {
+    background-color: #0a1426;
+    background-image:
+        radial-gradient(ellipse at top right, rgb(8 125 242 / 13%), transparent 36rem),
+        linear-gradient(145deg, #0a1426 0%, #0d192c 58%, #101e34 100%);
+}
+
+.fi-sidebar {
+    border-inline-end: 1px solid rgb(35 55 82 / 10%);
+}
+
+html.dark .fi-sidebar {
+    background: linear-gradient(180deg, #12223a 0%, #0b1629 100%);
+    border-inline-end-color: rgb(135 165 205 / 14%);
+}
+
+.fi-topbar {
+    backdrop-filter: blur(14px);
+    background-color: rgb(255 255 255 / 88%);
+    border-bottom: 1px solid rgb(35 55 82 / 9%);
+}
+
+html.dark .fi-topbar {
+    background-color: rgb(10 20 38 / 90%);
+    border-bottom-color: rgb(135 165 205 / 14%);
+}
+
+.fi-logo {
+    padding: 0;
+    background: transparent;
+    filter: drop-shadow(0 4px 12px rgb(8 125 242 / 12%));
+}
+
+html.dark .fi-logo {
+    padding: 0;
+    background-color: transparent;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+    border-inline-start: 2px solid var(--primary-500);
+}
+
+.fi-header-heading {
+    letter-spacing: -0.025em;
+}

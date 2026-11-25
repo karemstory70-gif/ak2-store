@@ -1,0 +1,51 @@
+html[dir="rtl"] body {
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+html[dir="rtl"] .nav-link::after {
+    right: 0;
+    left: auto;
+}
+
+html[dir="rtl"] .cart-count {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .mini-cart,
+html[dir="rtl"] .account-menu {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .category-collection .category-card:hover .category-content > strong [aria-hidden] {
+    transform: translateX(-4px);
+}
+
+html[dir="rtl"] .categories-page .section-eyebrow,
+html[dir="rtl"] .category-collection .category-content > span {
+    letter-spacing: 0;
+}
+
+html[dir="rtl"] .products-heading .section-label {
+    letter-spacing: 0.04em;
+}
+
+html[dir="rtl"] .products-heading h1 {
+    letter-spacing: 0;
+}
+
+html[dir="rtl"] .product-details-category {
+    letter-spacing: 0;
+}
+
+html[dir="rtl"] .product-variants-section select {
+    text-align: start;
+}
+
+@media (max-width: 768px) {
+    html[dir="rtl"] .main-navigation {
+        right: 0;
+        left: auto;
+    }
+}
